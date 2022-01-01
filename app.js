@@ -7,6 +7,7 @@ slider.addEventListener('click', (e)=>{
         const calc1 = document.querySelectorAll('.calc-1');
         const input1 = document.querySelectorAll('.input-1');
         const del1 = document.querySelectorAll('.del-1');
+        const delShadow1 = document.querySelector('.del-shadow-1');
         const equ1 = document.querySelectorAll('.equ-1');
         const textPri1 = document.querySelectorAll('.text-pri-1');
         const textSec1 = document.querySelectorAll('.text-sec-1');
@@ -14,6 +15,8 @@ slider.addEventListener('click', (e)=>{
         sliderBtn.classList.add('theme-2');
         main1.classList.add('main-2');
         main1.classList.remove('main-1');
+        delShadow1.classList.add('del-shadow-2');
+        delShadow1.classList.remove('del-shadow-1');
         calc1.forEach(item=>{
             item.classList.add("calc-2");
             item.classList.remove("calc-1");
@@ -44,6 +47,7 @@ slider.addEventListener('click', (e)=>{
         const calc2 = document.querySelectorAll('.calc-2');
         const input2 = document.querySelectorAll('.input-2');
         const del2 = document.querySelectorAll('.del-2');
+        const delShadow2 = document.querySelector('.del-shadow-2');
         const equ2 = document.querySelectorAll('.equ-2');
         const textPri2 = document.querySelectorAll('.text-pri-2');
         const textSec2 = document.querySelectorAll('.text-sec-2');
@@ -51,6 +55,8 @@ slider.addEventListener('click', (e)=>{
         sliderBtn.classList.add('theme-3');
         main2.classList.add('main-3');
         main2.classList.remove('main-2');
+        delShadow2.classList.add('del-shadow-3');
+        delShadow2.classList.remove('del-shadow-2');
         calc2.forEach(item=>{
             item.classList.add("calc-3");
             item.classList.remove("calc-2");
@@ -80,6 +86,7 @@ slider.addEventListener('click', (e)=>{
         const calc3 = document.querySelectorAll('.calc-3');
         const input3 = document.querySelectorAll('.input-3');
         const del3 = document.querySelectorAll('.del-3');
+        const delShadow3 = document.querySelector('.del-shadow-3');
         const equ3 = document.querySelectorAll('.equ-3');
         const textPri3 = document.querySelectorAll('.text-pri-3');
         const textSec3 = document.querySelectorAll('.text-sec-3');
@@ -87,6 +94,8 @@ slider.addEventListener('click', (e)=>{
         sliderBtn.classList.add('theme-1');
         main3.classList.add('main-1');
         main3.classList.remove('main-3');
+        delShadow3.classList.add('del-shadow-1');
+        delShadow3.classList.remove('del-shadow-3');
         calc3.forEach(item=>{
             item.classList.add("calc-1");
             item.classList.remove("calc-3");
