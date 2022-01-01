@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="icon" type="image/svg" sizes="32x32" href="./images/calculator.svg">
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Calculator app</title>
-  <style>.attribution{font-size: 11px; text-align: center;}.attribution a {color: hsl(228, 45%, 44%);}</style>
 </head>
 <body>
-  <main class="main-1 d-flex justify-content-center align-items-center text-white ">
-    <div class="container">
+  <main class="main-1 d-flex justify-content-center align-items-center">
+    <div class="container text-sec-1">
       <div class="d-flex justify-content-between my-3">
         <p class="h4">Calc</p>
         <div class="d-flex align-items-center">
@@ -23,46 +23,46 @@
             <p class="h7 mx-1">3</p>
             </div>
             <div class="slider calc-1">
-              <div class="slider-btn theme-1"></div>
+              <div class="slider-btn theme-1 del-1"></div>
             </div>
           </div>
         </div>
       </div>
-      <div class="output calc-1 text-black text-center rounded p-5 my-2"></div>
+      <div class="output calc-1 text-black text-center rounded p-5 my-2 text-sec-1"></div>
       <div class="input my-4 calc-1 text-pri text-center">
         <div class="row">
-          <div class="col-3 input-1 mc btn">7</div>
-          <div class="col-3 input-1 mc btn">8</div>
-          <div class="col-3 input-1 mc btn">9</div>
-          <div class="col-2 bg-del bg-input-sec mc bg-danger btn">DEL</div>
+          <div class="col-3 input-1 mc btn text-pri-1">7</div>
+          <div class="col-3 input-1 mc btn text-pri-1">8</div>
+          <div class="col-3 input-1 mc btn text-pri-1">9</div>
+          <div class="col-2 mc btn del-1 text-white">DEL</div>
         </div>
         <div class="row">
-          <div class="col-3 input-1 mc btn">4</div>
-          <div class="col-3 input-1 mc btn">5</div>
-          <div class="col-3 input-1 mc btn">6</div>
-          <div class="col-2 input-1 bg-del mc btn">+</div>
+          <div class="col-3 input-1 mc btn text-pri-1">4</div>
+          <div class="col-3 input-1 mc btn text-pri-1">5</div>
+          <div class="col-3 input-1 mc btn text-pri-1">6</div>
+          <div class="col-2 input-1 bg-del mc btn text-pri-1">+</div>
         </div>
         <div class="row">
-          <div class="col-3 input-1 mc btn">1</div>
-          <div class="col-3 input-1 mc btn">2</div>
-          <div class="col-3 input-1 mc btn">3</div>
-          <div class="col-2 input-1 bg-del mc btn">-</div>
+          <div class="col-3 input-1 mc btn text-pri-1">1</div>
+          <div class="col-3 input-1 mc btn text-pri-1">2</div>
+          <div class="col-3 input-1 mc btn text-pri-1">3</div>
+          <div class="col-2 input-1 bg-del mc btn text-pri-1">-</div>
         </div>
         <div class="row">
-          <div class="col-3 input-1 mc btn">.</div>
-          <div class="col-3 input-1 mc btn">0</div>
-          <div class="col-3 input-1 mc btn">/</div>
-          <div class="col-2 input-1 bg-sec-del mc btn">X</div>
+          <div class="col-3 input-1 mc btn text-pri-1">.</div>
+          <div class="col-3 input-1 mc btn text-pri-1">0</div>
+          <div class="col-3 input-1 mc btn text-pri-1">/</div>
+          <div class="col-2 input-1 bg-sec-del mc btn text-pri-1">X</div>
         </div>
         <div class="row">
-          <div class="col-5 bg-primary mx-1 btn text-white">RESET</div>
-          <div class="col-5 bg-pri-del bg-primary ms-2 btn mc-lg text-white">=</div>
+          <div class="col-5 bg-primary mx-1 btn equ-1 text-white">RESET</div>
+          <div class="col-5 bg-pri-del bg-primary ms-2 btn mc-lg equ-1 text-white">=</div>
         </div>
       </div>
     </div>
   </main>
 
-  <div class="attribution mt-auto calc-1">
+  <div class="attribution mt-auto text-pri-1 calc-1">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/ahmed-alhomsi?tab=repositories">Ahmed Alhomsi</a>.
   </div>

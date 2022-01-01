@@ -1,3 +1,12 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+/* ------------------------------------------------------------------------------------------ */
+
 :root {
   --calc-1: hsl(223, 31%, 20%);
   --calc-2: hsl(0, 5%, 81%);
@@ -7,13 +16,38 @@
   --main-2: hsl(0, 0%, 90%);
   --main-3: hsl(268, 75%, 9%);
 
-  --input-1: hsl(225, 21%, 49%);
+  --input-1: hsl(30, 25%, 89%);
   --input-2: hsl(45, 7%, 89%);
-  --input-3: hsl(281, 89%, 26%);
+  --input-3: hsl(268, 47%, 21%);
 
-  /* --input-shadow-1:; */
-  /* --input-shadow-2:; */
-  /* --input-shadow-3:; */
+  --input-shadow-1: hsl(225, 21%, 49%);
+  --input-shadow-2: hsl(223, 31%, 20%);
+  --input-shadow-3: hsl(285, 91%, 52%);
+
+  --del-1: hsl(6, 63%, 50%);
+  --del-2: hsl(25, 98%, 40%);
+  --del-3: hsl(176, 100%, 44%);
+
+  --del-shadow-1: hsl(6, 70%, 34%);
+  --del-shadow-2: hsl(25, 99%, 27%);
+  --del-shadow-3: hsl(177, 92%, 70%);
+
+  --equ-1: hsl(225, 21%, 49%);
+  --equ-2: hsl(185, 42%, 37%);
+  --equ-3: hsl(281, 89%, 26%);
+
+  --equ-shadow-1: hsl(28, 16%, 65%);
+  --equ-shadow-2: hsl(35, 11%, 61%);
+  --equ-shadow-3: hsl(290, 70%, 36%);
+
+  --text-pri-1: hsl(221, 14%, 31%);
+  --text-sec-1: #fff;
+
+  --text-pri-2: hsl(60, 10%, 19%);
+  --text-sec-2: hsl(60, 10%, 19%);
+
+  --text-pri-3: hsl(52, 100%, 62%);
+  --text-sec-3: hsl(52, 100%, 62%);
 }
 
 *,
@@ -64,12 +98,52 @@ main {
   background-color: var(--input-3);
 }
 
-.text-pri {
-  color: var(--text-pri);
+.text-pri-1 {
+  color: var(--text-pri-1) !important;
 }
 
-.text-sec {
-  color: var(--text-sec);
+.text-sec-1 {
+  color: var(--text-sec-1) !important;
+}
+
+.text-pri-2 {
+  color: var(--text-pri-2) !important;
+}
+
+.text-sec-2 {
+  color: var(--text-sec-2) !important;
+}
+
+.text-pri-3 {
+  color: var(--text-pri-3) !important;
+}
+
+.text-sec-3 {
+  color: var(--text-sec-3) !important;
+}
+
+.del-1 {
+  background: var(--del-1) !important;
+}
+
+.del-2 {
+  background-color: var(--del-2) !important;
+}
+
+.del-3 {
+  background-color: var(--del-3) !important;
+}
+
+.equ-1 {
+  background-color: var(--equ-1) !important;
+}
+
+.equ-2 {
+  background-color: var(--equ-2) !important;
+}
+
+.equ-3 {
+  background-color: var(--equ-3) !important;
 }
 
 .input {
@@ -96,7 +170,6 @@ main {
   left: 0;
   bottom: 0;
   top: 0;
-  background: #fff;
   height: 20px;
   width: 20px;
   border-radius: 50%;
@@ -113,6 +186,10 @@ main {
 
 .theme-3 {
   margin-left: 40px;
+}
+
+.text-white {
+  color: hsl(0, 0%, 90%) !important;
 }
 
 @media screen and (min-width: 766px) {
