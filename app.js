@@ -1,5 +1,12 @@
 const slider = document.querySelector('.slider');
 const sliderBtn = document.querySelector('.slider-btn');
+const calculator = document.querySelector('.input');
+const output = document.querySelector('.output');
+const numberRegex = /^\d$/;
+
+function showOutput(outpt) {
+    output.textContent = outpt;
+}
 
 slider.addEventListener('click', (e)=>{
     if(sliderBtn.classList.contains('theme-1')) {
@@ -121,4 +128,51 @@ slider.addEventListener('click', (e)=>{
             textItem.classList.remove('text-sec-3');
         });
     }
-})
+});
+let operations = [];
+
+calculator.addEventListener('click', (e)=>{
+    const clickValue = e.target.innerText;
+    const isNumber = numberRegex.test(e.target.innerText);
+    if(operations.length === 0 && isNumber || operations.length === 2 && isNumber) {
+        operations.push(clickValue);
+        showOutput(operations.join(""));
+    } else if(operations.length == 1 && !isNumber && clickValue.length === 1) {
+        operations.push(clickValue);
+        showOutput(operations.join(""));
+    } else if(operations.length == 1 && isNumber) {
+        operations[0] = operations[0] + clickValue;
+        showOutput(operations.join(""));
+    } else if(operations.length == 3 && isNumber) {
+        operations[2] = operations[2] + clickValue;
+        showOutput(operations.join(""));
+    } else if(clickValue === 'RESET') {
+        operations = [];
+        showOutput(operations);
+    } else if(clickValue === '=') {
+        const firstOperand = parseInt(operations[0]);
+        const operator = operations[1];
+        const secondOperand = parseInt(operations[2]);
+        let result = 0;
+        switch(operator) {
+            case '/':
+                result = firstOperand / secondOperand;
+                break;
+            case 'x':
+                result = firstOperand * secondOperand;
+                break;
+            case '-':
+                result = firstOperand - secondOperand;
+                break;
+            case '+':
+                result = firstOperand + secondOperand;
+                break;
+        }
+        showOutput(result);
+        operations = [result];
+    } else if(clickValue === 'DEL') {
+        operations.pop();
+        showOutput(operations.join(""));
+    }
+});
+
