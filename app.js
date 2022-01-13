@@ -3,13 +3,10 @@ const sliderBtn = document.querySelector('.slider-btn');
 const calculator = document.querySelector('.input');
 const output = document.querySelector('.output');
 const numberRegex = /^\d$/;
+let operations = [];
 
-function showOutput(outpt) {
-    output.textContent = outpt;
-}
-
-slider.addEventListener('click', (e)=>{
-    if(sliderBtn.classList.contains('theme-1')) {
+function setTheme(theme) {
+    if(theme == 'theme-1') {
         const main1 = document.querySelector('.main-1');
         const calc1 = document.querySelectorAll('.calc-1');
         const input1 = document.querySelectorAll('.input-1');
@@ -48,8 +45,7 @@ slider.addEventListener('click', (e)=>{
             textItem.classList.add('text-sec-2');
             textItem.classList.remove('text-sec-1');
         });
-    }
-    else if(sliderBtn.classList.contains('theme-2')) {
+    } else if(theme == 'theme-2') {
         const main2 = document.querySelector('.main-2');
         const calc2 = document.querySelectorAll('.calc-2');
         const input2 = document.querySelectorAll('.input-2');
@@ -88,7 +84,7 @@ slider.addEventListener('click', (e)=>{
             textItem.classList.add('text-sec-3');
             textItem.classList.remove('text-sec-2');
         });
-    } else {
+    } else if(theme == 'theme-3') {
         const main3 = document.querySelector('.main-3');
         const calc3 = document.querySelectorAll('.calc-3');
         const input3 = document.querySelectorAll('.input-3');
@@ -128,8 +124,22 @@ slider.addEventListener('click', (e)=>{
             textItem.classList.remove('text-sec-3');
         });
     }
+}
+
+function showOutput(outpt) {
+    output.textContent = outpt;
+}
+
+slider.addEventListener('click', ()=>{
+    if(sliderBtn.classList.contains('theme-1')) {
+        setTheme('theme-1');
+    }
+    else if(sliderBtn.classList.contains('theme-2')) {
+        setTheme('theme-2');
+    } else {
+        setTheme('theme-3')
+    }
 });
-let operations = [];
 
 calculator.addEventListener('click', (e)=>{
     const clickValue = e.target.innerText;
@@ -138,22 +148,33 @@ calculator.addEventListener('click', (e)=>{
         operations.push(clickValue);
         showOutput(operations.join(""));
     } else if(operations.length == 1 && !isNumber && clickValue.length === 1) {
-        operations.push(clickValue);
-        showOutput(operations.join(""));
+        if(clickValue == '.') {
+            operations[0] = operations[0] + '.';
+            showOutput(operations.join(""));
+        } else if(clickValue == '=') {
+            showOutput(operations);
+        } else {
+            operations.push(clickValue);
+            showOutput(operations.join(""));
+        }
     } else if(operations.length == 1 && isNumber) {
         operations[0] = operations[0] + clickValue;
         showOutput(operations.join(""));
     } else if(operations.length == 3 && isNumber) {
         operations[2] = operations[2] + clickValue;
         showOutput(operations.join(""));
+    } else if(operations.length == 3 && clickValue == '.') {
+        operations[2] = operations[2] + '.';
+        showOutput(operations.join(""));
     } else if(clickValue === 'RESET') {
         operations = [];
-        showOutput(operations);
+        showOutput(operations.join(""));
     } else if(clickValue === '=') {
-        const firstOperand = parseInt(operations[0]);
+        const firstOperand = parseFloat(operations[0]);
         const operator = operations[1];
-        const secondOperand = parseInt(operations[2]);
+        const secondOperand = parseFloat(operations[2]);
         let result = 0;
+        if(operations.length > 2) {
         switch(operator) {
             case '/':
                 result = firstOperand / secondOperand;
@@ -169,10 +190,24 @@ calculator.addEventListener('click', (e)=>{
                 break;
         }
         showOutput(result);
-        operations = [result];
+        operations = [result.toString()];
+    }
     } else if(clickValue === 'DEL') {
-        operations.pop();
+        if(operations.length == 2) {
+            operations.pop();
+        } else if(operations.length == 0) {
+            showOutput('0');
+        } else {
+            const number = operations[operations.length - 1];
+            const newNumber = number.substring(0, number.length-1);
+            operations[operations.length - 1] = newNumber;
+        }
         showOutput(operations.join(""));
     }
+    operations.forEach((operation, index) =>{
+        if(operation == '') {
+            operations.splice(index, 1);
+        }
+    });
 });
 
